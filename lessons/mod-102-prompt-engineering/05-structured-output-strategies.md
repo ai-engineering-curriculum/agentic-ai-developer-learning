@@ -38,7 +38,7 @@ USER:
 
 What you get when it works: a parseable JSON object.
 
-What you get when it breaks: prose around the JSON ("Sure! Here's the response: ```json {...} ```"), trailing commentary, code fences, escaped quotes that double-escape on the way back, partially-truncated JSON when you hit `max_tokens`.
+What you get when it breaks: prose around the JSON (a "Sure! Here's the response:" preamble with the JSON wrapped in a code fence), trailing commentary, escaped quotes that double-escape on the way back, partially-truncated JSON when you hit `max_tokens`.
 
 A useful tightening trick on providers that support it: **prefill** the assistant turn with `{`. The model continues from there, which prevents the preamble and the code fence in one move:
 

@@ -83,7 +83,7 @@ Memorize this picture:
 |-------------|------------------------|---------------------|---------------------------------------|
 | Ingest      | offline, on doc change | raw documents       | rows of `(vector, chunk, metadata)`   |
 | Query       | online, per request    | user question       | top-K chunks → prompt → answer        |
-| Shared      | both                   | the same embedding model and the same vector index |
+| Shared      | both                   | same embedding model   | same vector index                     |
 
 Get the ingest pipeline wrong and the query pipeline has no way to recover — bad chunks, missing metadata, the wrong embedding model. Get the query pipeline wrong and a perfect index still returns confused answers. Both have to be solid, and they have to agree on the embedding model and the chunking convention.
 
