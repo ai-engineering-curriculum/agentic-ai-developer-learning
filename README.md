@@ -1,7 +1,7 @@
 # AI Infrastructure Agentic AI Developer — Learning Repository
 
 <!-- aicg:site-banner -->
-> 🎓 Part of the **[AI Infrastructure Curriculum](https://ai-infra-curriculum.github.io/)** — a free, open-source ladder of role-based AI-infrastructure programs. [Explore the ladder](https://ai-infra-curriculum.github.io/) · [Join the first live cohort](https://ai-infra-curriculum.github.io/junior.html)
+> 🎓 Part of the **free, open-source AI Infrastructure Curriculum**. For live, instructor-led **[cohorts](https://ai-infra-curriculum.github.io/junior.html)** and **[team programs](https://ai-infra-curriculum.github.io/teams.html)**, visit **[ai-infra-curriculum.github.io](https://ai-infra-curriculum.github.io/)**.
 <!-- /aicg:site-banner -->
 
 Entry rung: builds LLM-powered applications and simple agents — LLM API usage, prompt engineering, structured output, function/tool calling, retrieval basics. On-ramp to the Agentic AI Engineer track.
