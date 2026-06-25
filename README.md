@@ -11,7 +11,7 @@
 ## 🎯 Overview
 
 This is the **entry rung of the Agentic track** (level 20) and the on-ramp to the
-[Agentic AI Engineer](https://github.com/ai-infra-curriculum/ai-infra-agentic-ai-engineer-learning)
+[Agentic AI Engineer](https://github.com/ai-engineering-curriculum/agentic-ai-engineer-learning)
 track (level 30). It teaches the LLM-application fundamentals that every higher
 agentic track assumes you already have, and maps directly to the high-volume
 **"AI Engineer / LLM application developer"** hiring title.
@@ -83,7 +83,7 @@ concepts are introduced from first principles. See
 ### Clone
 
 ```bash
-git clone https://github.com/ai-infra-curriculum/ai-infra-agentic-ai-developer-learning.git
+git clone https://github.com/ai-engineering-curriculum/agentic-ai-developer-learning.git
 cd ai-infra-agentic-ai-developer-learning
 ```
 
@@ -176,7 +176,7 @@ machine. Finishes with running the whole thing end-to-end and locally.
 Reference implementations for every exercise and project live in the paired
 solutions repository:
 
-[`ai-infra-agentic-ai-developer-solutions`](https://github.com/ai-infra-curriculum/ai-infra-agentic-ai-developer-solutions)
+[`ai-infra-agentic-ai-developer-solutions`](https://github.com/ai-engineering-curriculum/agentic-ai-developer-solutions)
 
 Try each exercise yourself first; consult the solutions repo to compare
 approaches once you have a working attempt.
@@ -188,7 +188,7 @@ approaches once you have a working attempt.
 This track is the on-ramp to the rest of the Agentic ladder:
 
 1. **Agentic AI Developer** (level 20) — you are here
-2. **[Agentic AI Engineer](https://github.com/ai-infra-curriculum/ai-infra-agentic-ai-engineer-learning)** (level 30) — multi-agent systems, orchestration, evaluation
+2. **[Agentic AI Engineer](https://github.com/ai-engineering-curriculum/agentic-ai-engineer-learning)** (level 30) — multi-agent systems, orchestration, evaluation
 3. **Senior AI Engineer** (level 40) and **Systems Architect** (level 48) — production agentic platforms at scale
 
 ---
