@@ -53,6 +53,7 @@ As each field completes, replace `[waiting …]` with the real value. Never rend
 
 After the happy path works, prove your parser cannot be tricked. Add a `--fake-stream FILE` mode that replays a hand-crafted sequence of `partial_json` chunks from a file — bypassing the network — and use it to run these three test cases:
 
+<!-- markdownlint-disable-next-line MD038 -->
 1. **Chunk split mid-string.** The chunks are `{"title": "Deploy `, then `pipeline update"}, ...`. Your renderer must not print `Deploy` as the title. It must wait for the closing `"` before rendering `Deploy pipeline update`.
 2. **Chunk split mid-enum.** The chunks are `..., "risk_level": "l`, then `ow", ...`. Your renderer must not display `l` as the risk level. It must wait until the closing `"` shows `low`.
 3. **Chunk split mid-escape.** The chunks contain `..., "summary": "Bake at 350\`, then `u00b0F ...`. Your renderer must not display a bare backslash. Either render up to the last known-safe boundary (before the backslash) or wait for the full escape.
