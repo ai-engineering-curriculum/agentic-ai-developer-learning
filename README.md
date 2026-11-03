@@ -8,7 +8,7 @@
 > 💜 **[Sponsor this curriculum](https://github.com/sponsors/ai-engineering-curriculum)** — sponsorships keep the whole open-source AI Career Curriculum free and moving.
 <!-- /aicg:sponsor -->
 
-> **Status:** ✅ Curriculum authored — 6 modules with lecture chapters and hands-on exercises, plus 2 capstone projects. Quizzes and labs are scaffolded and fill in on subsequent content cycles. AI-assisted content is under ongoing human review.
+> **Status:** ✅ Curriculum authored — 9 modules with lecture chapters and hands-on exercises, plus 3 capstone projects. Quizzes and labs are scaffolded and fill in on subsequent content cycles. AI-assisted content is under ongoing human review.
 
 ---
 
@@ -24,7 +24,9 @@ You start from a single LLM API call and finish by shipping a containerized,
 tool-using agent behind a validated API. Each module builds on the last: API
 mechanics → reliable prompts and structured output → tools that take action →
 retrieval over your own documents → a reason-act agent that ties it together →
-deploying the whole thing as a service.
+deploying the whole thing as a service. Three production-craft modules then harden
+it: streaming and async orchestration, model selection and cost control, and a
+minimal eval suite that catches regressions before users do.
 
 ### What You'll Master
 
@@ -34,13 +36,16 @@ deploying the whole thing as a service.
 - **Build retrieval** — embeddings, similarity search, chunking, indexing, and a simple RAG query loop you can defend with a recall number
 - **Implement your first agent** with the ReAct (Thought/Action/Observation) loop, retrieval-as-a-tool, and conversation memory
 - **Ship an LLM app** as a FastAPI service with secrets management, structured logging, a cost/usage guardrail, and a Dockerfile
+- **Stream and orchestrate** — consume SSE streams, parse partial JSON, fan out async calls under bounded concurrency, retry with backoff + jitter, and report honest TTFT / p95 latency
+- **Defend model choice and cost** — small-vs-frontier benchmarks, per-call cost estimates and token budgets, prompt caching, cascade routing, and graceful degradation when a provider is down
+- **Gate features on evals** — a golden set run as a pytest CI check, rule / similarity / LLM-judge scoring, and regression tracking across model and prompt changes
 
 ---
 
 ## 📊 Modules
 
-Six modules, 10 hours each (60 hours of module content). Every module ships
-lecture chapters, three hands-on exercises, and a `resources.md` reading list.
+Nine modules (90 hours of module content). Every module ships lecture
+chapters, three to five hands-on exercises, and a `resources.md` reading list.
 Quizzes and labs are scaffolded and authored on subsequent content cycles.
 
 | Module | Topic | Hours | Exercises | Quiz |
@@ -51,17 +56,21 @@ Quizzes and labs are scaffolded and authored on subsequent content cycles.
 | [mod-104](./lessons/mod-104-retrieval-basics/README.md) | Retrieval Basics (Embeddings & Simple RAG) | 10h | 3 | Planned |
 | [mod-105](./lessons/mod-105-first-agent/README.md) | Your First Agent: The Reason-Act Loop | 10h | 3 | Planned |
 | [mod-106](./lessons/mod-106-llm-app-deployment/README.md) | Shipping an LLM Application | 10h | 3 | Planned |
+| [mod-107](./lessons/mod-107-streaming-async-and-orchestration/README.md) | Streaming, Async, and Parallel LLM Orchestration | 12h | 5 | Planned |
+| [mod-108](./lessons/mod-108-model-selection-cost-and-prompt-caching/README.md) | Model Selection, Cost, and Prompt Caching | 10h | 5 | Planned |
+| [mod-109](./lessons/mod-109-minimal-eval-and-regression-checks/README.md) | Minimal Evaluation and Regression Checks for LLM Features | 8h | 4 | Planned |
 
 ---
 
 ## 🛠️ Projects
 
-Two capstones (30 hours combined) that compose the module skills end-to-end.
+Three capstones (50 hours combined) that compose the module skills end-to-end.
 
 | Project | Focus | Hours | Builds On |
 |---------|-------|-------|-----------|
 | [project-101](./projects/project-101-llm-powered-app/README.md) | Ship an LLM-powered application — prompting, structured output, tool calling, and simple RAG behind a validated API with secrets management and a usage guardrail | 18h | mod-101 → mod-104, mod-106 |
 | [project-102](./projects/project-102-tool-using-agent/README.md) | A simple tool-using agent — a single ReAct loop with 2–3 tools, retrieval, and conversation memory; document where it breaks down (the bridge into the Engineer track) | 12h | mod-103 → mod-105 |
+| [project-103](./projects/project-103-multi-provider-comparison-report/README.md) | Multi-provider comparison report for one LLM feature — accuracy against a golden set, cost with prompt caching, and streaming latency across providers and model sizes, ending in a defended model-selection recommendation | 20h | mod-107 → mod-109 |
 
 ---
 
@@ -172,6 +181,29 @@ Turns a laptop script into a service: a FastAPI process with Pydantic-validated
 requests, environment-managed secrets, structured logs that include token usage,
 a cost/usage guardrail, and a Dockerfile so the app runs the same way on another
 machine. Finishes with running the whole thing end-to-end and locally.
+
+### mod-107: Streaming, Async, and Parallel LLM Orchestration — 12h
+
+The wire and the runtime between "the model produced an answer" and "the user
+saw it, fast." Consumes SSE streams from OpenAI and Anthropic, streams partial
+structured output safely, fans out concurrent calls with `asyncio` + `httpx`
+under a bounded concurrency limit, retries transient failures with backoff and
+jitter, and reports time-to-first-token and p50 / p95 / p99 latency honestly.
+
+### mod-108: Model Selection, Cost, and Prompt Caching — 10h
+
+Defends the model choice with numbers. Benchmarks small vs. frontier models
+across providers, estimates cost per feature call and enforces token budgets,
+turns on and measures provider prompt caching, routes requests by task shape
+(cascade, fast-first-then-escalate, batch), and plans graceful degradation for
+provider outages.
+
+### mod-109: Minimal Evaluation and Regression Checks — 8h
+
+Keeps a shipped LLM feature working: a 20–50 example golden set, scored with
+rule-based, similarity, and calibrated LLM-as-a-judge checks, run as a required
+pytest CI gate, with run history that routes each regression to the commit,
+model, or prompt version that caused it.
 
 ---
 
