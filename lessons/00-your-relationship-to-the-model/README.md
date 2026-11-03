@@ -48,7 +48,6 @@ Each row is a sibling org: what you hand them, what they hand you, and the role 
 ## Your ladder
 
 - **Before this role:** this is the entry point of the ladder.
-- **Alongside it (same level):** [LLM Application Developer](https://github.com/ai-engineering-curriculum/llm-application-developer-learning)
 - **After this role:** [AI Evaluation Engineer](https://github.com/ai-engineering-curriculum/ai-eval-engineer-learning), [Agentic AI Engineer](https://github.com/ai-engineering-curriculum/agentic-ai-engineer-learning), [Applied AI Engineer](https://github.com/ai-engineering-curriculum/applied-ai-engineer-learning), [RAG & Retrieval Engineer](https://github.com/ai-engineering-curriculum/rag-engineer-learning)
 
 ## Scenario: One model upgrade, six orgs
