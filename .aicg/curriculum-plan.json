@@ -112,6 +112,68 @@
       ],
       "labs": [],
       "quizzes": 1
+    },
+    {
+      "id": "mod-107-streaming-async-and-orchestration",
+      "title": "Streaming, Async, and Parallel LLM Orchestration",
+      "hours": 12,
+      "objectives": [
+        "Consume SSE streams from OpenAI and Anthropic and render partial output without buffering to completion",
+        "Stream partial structured output (JSON) safely and recognise when a partial parse is legal",
+        "Orchestrate parallel LLM calls with asyncio + httpx under a bounded concurrency limit, cancelling cleanly on disconnect",
+        "Retry with exponential backoff plus jitter, distinguishing transient from terminal errors",
+        "Measure and honestly report p50/p95/p99 latency and time-to-first-token for a streaming feature"
+      ],
+      "exercises": [
+        {"id": "exercise-01", "slug": "first-sse-stream-consumer", "hours": 1.5},
+        {"id": "exercise-02", "slug": "streaming-partial-json", "hours": 2},
+        {"id": "exercise-03", "slug": "async-fanout-with-bounded-concurrency", "hours": 2},
+        {"id": "exercise-04", "slug": "retry-with-backoff-and-jitter", "hours": 1.5},
+        {"id": "exercise-05", "slug": "measure-time-to-first-token-and-tail-latency", "hours": 2}
+      ],
+      "labs": [],
+      "quizzes": 1
+    },
+    {
+      "id": "mod-108-model-selection-cost-and-prompt-caching",
+      "title": "Model Selection, Cost, and Prompt Caching",
+      "hours": 10,
+      "objectives": [
+        "Compare small vs. frontier models across at least two providers on accuracy, cost, and latency, and defend the choice",
+        "Estimate cost per feature call and enforce per-request and per-user token budgets",
+        "Use provider prompt caching and measure the cache-hit ratio in a real workload",
+        "Route requests by task shape: cascade routing, fast-first-then-escalate, and batch APIs",
+        "Reason about cost/latency/availability SLO trade-offs and design graceful degradation for provider outages"
+      ],
+      "exercises": [
+        {"id": "exercise-01", "slug": "cost-per-feature-call-estimate", "hours": 1.5},
+        {"id": "exercise-02", "slug": "small-vs-frontier-a-b-benchmark", "hours": 2.5},
+        {"id": "exercise-03", "slug": "prompt-caching-hit-ratio", "hours": 2},
+        {"id": "exercise-04", "slug": "cascade-routing-cheap-then-expensive", "hours": 1.5},
+        {"id": "exercise-05", "slug": "provider-outage-graceful-degradation", "hours": 1}
+      ],
+      "labs": [],
+      "quizzes": 1
+    },
+    {
+      "id": "mod-109-minimal-eval-and-regression-checks",
+      "title": "Minimal Evaluation and Regression Checks for LLM Features",
+      "hours": 8,
+      "objectives": [
+        "Author a 20-50 example golden set with per-row tolerance and a defended sampling strategy",
+        "Run the golden set as a required pytest CI check on prompt and model changes",
+        "Score outputs with rule-based, embedding-similarity, and calibrated LLM-as-a-judge checks, knowing each one's trade-offs",
+        "Track quality regressions over time and route each to the commit/model/prompt version that caused it",
+        "Draw the boundary to ai-eval-engineer-learning (L30) for eval depth"
+      ],
+      "exercises": [
+        {"id": "exercise-01", "slug": "author-a-golden-set", "hours": 1.5},
+        {"id": "exercise-02", "slug": "pytest-eval-in-ci", "hours": 2},
+        {"id": "exercise-03", "slug": "rule-vs-similarity-vs-judge-scoring", "hours": 2},
+        {"id": "exercise-04", "slug": "regression-report-for-a-model-swap", "hours": 1.5}
+      ],
+      "labs": [],
+      "quizzes": 1
     }
   ],
   "projects": [
@@ -126,6 +188,12 @@
       "title": "A Simple Tool-Using Agent",
       "hours": 12,
       "description": "Build a single agent with a ReAct loop, 2-3 tools, retrieval, and basic conversation memory. Document where it breaks down — the bridge into the Agentic AI Engineer track."
+    },
+    {
+      "id": "project-103-multi-provider-comparison-report",
+      "title": "Multi-Provider Comparison Report for One LLM Feature",
+      "hours": 20,
+      "description": "Benchmark one LLM feature across at least two providers and small vs. frontier models: accuracy against a golden set, cost per call with prompt caching, and honest streaming latency (TTFT, p95), ending in a one-page model-selection recommendation with a graceful-degradation plan. Builds on mod-107, mod-108, and mod-109."
     }
   ]
 }
