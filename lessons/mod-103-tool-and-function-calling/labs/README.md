@@ -1,3 +1,9 @@
 # Labs for mod-103-tool-and-function-calling (Tool & Function Calling)
 
-Labs will be authored on subsequent cycles.
+Guided, step-by-step hands-on sessions. Each lab lists duration, prerequisites, numbered steps with commands or code, expected output, and checkpoints. Unlike the open-ended [exercises](../exercises/), labs are tightly scripted — you read a line, run a command, confirm the result, and move on.
+
+Each lab isolates a *single* move from the module so you can see what that move alone earns before the exercises bundle several together. They can be worked in any order, though the technique each one isolates is referenced forward from the matching chapter.
+
+- [lab-01 — Curl a Tool Round-Trip](lab-01-curl-a-tool-round-trip.md) *(45–60 min)* — run one tool round-trip over raw HTTP with `curl` and `jq`, inspect the `tool_use` block, and hand-author the `tool_result` follow-up turn. Isolates chapter 3's wire format (the assistant `tool_use` turn, the `user`-role `tool_result`, the `tool_use_id` echo, the stringified payload) before the SDK hides any of it.
+- [lab-02 — Tighten a Tool Description to Fix a Routing Bug](lab-02-tighten-a-tool-description.md) *(45–60 min)* — advertise two tools with deliberately vague descriptions, run four borderline prompts, then edit *only* the two descriptions and re-run. Grounds chapter 5's claim that "`tool_choice` is not a substitute for good descriptions" against a single prompt suite.
+- [lab-03 — Error-as-Feedback: Watch the Model Fix Its Own Call](lab-03-error-as-feedback.md) *(45–60 min)* — run the same adversarial refund prompt through three dispatcher variants (good structured error, opaque error, silent fallback) and compare which triggers a self-correction, which stalls, and which produces a confident wrong answer. Isolates chapter 6's "error-as-feedback" pattern and the anti-pattern it warns against.
