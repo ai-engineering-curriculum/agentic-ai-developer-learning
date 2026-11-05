@@ -1,3 +1,9 @@
 # Labs for mod-104-retrieval-basics (Retrieval Basics (Embeddings & Simple RAG))
 
-Labs will be authored on subsequent cycles.
+Guided, step-by-step hands-on sessions. Each lab lists duration, prerequisites, numbered steps with commands or code, expected output, and checkpoints. Unlike the open-ended [exercises](../exercises/), labs are tightly scripted — you read a line, run a command, confirm the result, and move on.
+
+Each lab isolates a *single* move from the module so you can see what that move alone earns before the exercises bundle several together. They can be worked in any order, though the specific failure or fix each one isolates is referenced forward from the matching chapter.
+
+- [lab-01 — Cross-Model Vector Poisoning](lab-01-cross-model-vector-poisoning.md) *(30–45 min)* — embed the same tiny corpus with two different models, query across them, watch rankings silently degrade, and add the one-line `embed_model` guard. Isolates chapter 2's "Mixed model vectors" foot-gun and chapter 5's `embed_model` filter rule.
+- [lab-02 — Overlap Rescues a Boundary-Straddling Answer](lab-02-overlap-rescues-boundary-answer.md) *(30–45 min)* — craft one document whose answer sentence straddles a chunk boundary, run the same recursive splitter at `overlap=0` and `overlap=150`, and watch the retrieval flip from miss to hit on a single query. Isolates chapter 4's "Overlap" claim as a specific fix for a specific failure.
+- [lab-03 — Calibrate a Refusal Score Floor](lab-03-calibrate-refusal-score-floor.md) *(45–60 min)* — score 8 answerable and 6 unanswerable queries against a small corpus, sort by top-1, pick the floor that separates the two distributions, then compute `over_refuse_rate` and `over_answer_rate` on the chosen value. Isolates chapter 6's "Score floor" short-circuit and chapter 7's refusal-correctness metrics on a hand-rolled calibration set.
