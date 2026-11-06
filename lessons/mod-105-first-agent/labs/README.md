@@ -1,3 +1,9 @@
 # Labs for mod-105-first-agent (Your First Agent: The Reason-Act Loop)
 
-Labs will be authored on subsequent cycles.
+Guided, step-by-step hands-on sessions. Each lab lists duration, prerequisites, numbered steps with commands or code, expected output, and checkpoints. Unlike the open-ended [exercises](../exercises/), labs are tightly scripted — you read a line, run a command, confirm the result, and move on.
+
+Each lab isolates a *single* move from the module so you can see what that move alone earns before the exercises bundle several together. They can be worked in any order, though the specific behavior each one isolates is referenced forward from the matching chapter.
+
+- [lab-01 — Nudge the Thought: Make Your Agent Self-Narrate](lab-01-nudge-the-thought.md) *(30–45 min)* — run the same tool-using prompt under a bare system prompt and under chapter 2's one-sentence "briefly state what you are about to do" nudge, and compare the `text` content blocks in each assistant turn. Isolates chapter 2's "Why the Thought matters" claim and chapter 3's "Surfacing intermediate text" rendering choice on a two-tool surface.
+- [lab-02 — Score in the Observation Triggers a Second Swing](lab-02-score-triggers-second-swing.md) *(30–45 min)* — stand up two `search_kb` variants that differ only in whether the returned chunks carry a `score` field, drive both against a borderline retrieval prompt, and watch the with-score variant re-search on a weak hit while the no-score variant answers from the first swing. Isolates chapter 4's "Including the score is the smallest change that enables this behavior" claim.
+- [lab-03 — Render the Scratchpad vs. Rely on Recall](lab-03-render-scratchpad-vs-recall.md) *(30–45 min)* — run the same four-turn conversation through two `AgentSession` classes that share `remember`/`recall` tools and differ only in whether `_build_system()` renders the current scratchpad into the system prompt. Watch the rendered variant answer a durable-fact question with zero tool calls while the blind variant burns a `recall` round trip or asks the user to restate. Isolates chapter 5's "a scratchpad that nobody reads" anti-pattern.
