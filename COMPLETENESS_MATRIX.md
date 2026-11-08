@@ -2,14 +2,14 @@
 
 AI Engineering Curriculum · Level 20 · [learning](https://github.com/ai-engineering-curriculum/agentic-ai-developer-learning) · [solutions](https://github.com/ai-engineering-curriculum/agentic-ai-developer-solutions)
 
-_Generated 2026-11-03 by `aicg org completeness`._
+_Generated 2026-11-08 by `aicg org completeness`._
 
-**Overall: 78%**
+**Overall: 92%**
 
 | | Progress | Count |
 |---|---|---|
 | Learning | `██████████` 100% | 9/9 modules complete |
-| Solutions | `██████░░░░` 56% | 18/32 exercises solved |
+| Solutions | `████████░░` 84% | 27/32 exercises solved |
 
 ## Modules
 
@@ -17,13 +17,13 @@ _Generated 2026-11-03 by `aicg org completeness`._
 |---|---|---|---|---|---|---|
 | `mod-101-llm-fundamentals` | ✅ Complete | 17,865 | 8 | 3 | — | 3/3 |
 | `mod-102-prompt-engineering` | ✅ Complete | 22,366 | 7 | 3 | — | 3/3 |
-| `mod-103-tool-and-function-calling` | ✅ Complete | 16,099 | 6 | 3 | — | 3/3 |
-| `mod-104-retrieval-basics` | ✅ Complete | 18,211 | 7 | 3 | — | 3/3 |
-| `mod-105-first-agent` | ✅ Complete | 19,293 | 6 | 3 | — | 3/3 |
-| `mod-106-llm-app-deployment` | ✅ Complete | 22,027 | 7 | 3 | — | 3/3 |
-| `mod-107-streaming-async-and-orchestration` | ✅ Complete | 17,908 | 5 | 5 | — | 0/5 |
+| `mod-103-tool-and-function-calling` | ✅ Complete | 24,308 | 6 | 3 | — | 3/3 |
+| `mod-104-retrieval-basics` | ✅ Complete | 27,213 | 7 | 3 | — | 3/3 |
+| `mod-105-first-agent` | ✅ Complete | 28,912 | 6 | 3 | — | 3/3 |
+| `mod-106-llm-app-deployment` | ✅ Complete | 32,001 | 7 | 3 | — | 3/3 |
+| `mod-107-streaming-async-and-orchestration` | ✅ Complete | 17,908 | 5 | 5 | — | 5/5 |
 | `mod-108-model-selection-cost-and-prompt-caching` | ✅ Complete | 17,897 | 5 | 5 | — | 0/5 |
-| `mod-109-minimal-eval-and-regression-checks` | ✅ Complete | 23,125 | 5 | 4 | — | 0/4 |
+| `mod-109-minimal-eval-and-regression-checks` | ✅ Complete | 23,125 | 5 | 4 | — | 4/4 |
 
 ## How this is calculated
 
