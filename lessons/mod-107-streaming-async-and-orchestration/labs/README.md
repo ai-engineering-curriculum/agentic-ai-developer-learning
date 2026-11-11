@@ -1,5 +1,9 @@
 # Labs for mod-107-streaming-async-and-orchestration (Streaming, Async, and Parallel LLM Orchestration)
 
-Planned labs:
+Guided, step-by-step hands-on sessions. Each lab lists duration, prerequisites, numbered steps with commands or code, expected output, and checkpoints. Unlike the open-ended [exercises](../exercises/), labs are tightly scripted — you read a line, run a command, confirm the result, and move on.
 
-- `lab-01` — lab-01
+Each lab isolates a *single* move from the module so you can see what that move alone earns before the exercises bundle several together. They can be worked in any order, though the technique each one isolates is referenced forward from the matching chapter.
+
+- [lab-01 — Curl an SSE Stream Byte-by-Byte](lab-01-curl-an-sse-stream.md) *(30–45 min)* — hit the Anthropic Messages API from `curl -N`, watch raw `event:` / `data:` / blank-line frames scroll live, then turn off `-N` and feel the "buffering somewhere in the middle" failure mode. Isolates chapter 1's SSE record format and the diagnostic you reach for the next time someone says "my stream isn't streaming."
+- [lab-02 — Watch the Thundering Herd (and Then Break It with Jitter)](lab-02-watch-the-thundering-herd.md) *(45–60 min)* — fan out 50 local asyncio workers against a FastAPI fake server that returns 429 to everything, once with exponential-only delays and once with full jitter, then bucket the retry arrivals into 100-ms histograms. Grounds chapter 4's "full jitter breaks the synchronised-retry pattern" in a single contrast — the no-jitter run has one tight spike per attempt; the jitter run smears.
+- [lab-03 — TTFT vs. TTC: Blocking vs. Streaming on One Prompt](lab-03-ttft-vs-ttc-blocking-vs-streaming.md) *(30–45 min)* — call the same model with the same prompt twice, once blocking and once streaming, and record TTFT and TTC. Grounds chapter 5's claim that "streaming does not make total wall-clock shorter; it changes the distribution of what the user waits for" in four numbers you measured yourself.
