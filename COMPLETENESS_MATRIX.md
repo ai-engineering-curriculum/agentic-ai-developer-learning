@@ -2,7 +2,7 @@
 
 AI Engineering Curriculum · Level 20 · [learning](https://github.com/ai-engineering-curriculum/agentic-ai-developer-learning) · [solutions](https://github.com/ai-engineering-curriculum/agentic-ai-developer-solutions)
 
-_Generated 2026-11-08 by `aicg org completeness`._
+_Generated 2026-11-15 by `aicg org completeness`._
 
 **Overall: 92%**
 
@@ -21,9 +21,9 @@ _Generated 2026-11-08 by `aicg org completeness`._
 | `mod-104-retrieval-basics` | ✅ Complete | 27,213 | 7 | 3 | — | 3/3 |
 | `mod-105-first-agent` | ✅ Complete | 28,912 | 6 | 3 | — | 3/3 |
 | `mod-106-llm-app-deployment` | ✅ Complete | 32,001 | 7 | 3 | — | 3/3 |
-| `mod-107-streaming-async-and-orchestration` | ✅ Complete | 17,908 | 5 | 5 | — | 5/5 |
-| `mod-108-model-selection-cost-and-prompt-caching` | ✅ Complete | 17,897 | 5 | 5 | — | 0/5 |
-| `mod-109-minimal-eval-and-regression-checks` | ✅ Complete | 23,125 | 5 | 4 | — | 4/4 |
+| `mod-107-streaming-async-and-orchestration` | ✅ Complete | 25,617 | 5 | 5 | — | 5/5 |
+| `mod-108-model-selection-cost-and-prompt-caching` | ✅ Complete | 27,790 | 5 | 5 | — | 0/5 |
+| `mod-109-minimal-eval-and-regression-checks` | ✅ Complete | 33,962 | 5 | 4 | — | 4/4 |
 
 ## How this is calculated
 
